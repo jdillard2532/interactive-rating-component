@@ -6,7 +6,10 @@ const mainCard = document.querySelector(".main-card");
 
 circle.forEach((e) => {
   e.addEventListener("click", () => {
-    e.classList.toggle("active");
+    for (let i = 0; i < circle.length; i++) {
+      circle[i].classList.remove("active");
+    }
+    e.classList.add("active");
   });
 });
 
@@ -31,13 +34,11 @@ circle.forEach((e) => {
 });
 
 btnSubmit.addEventListener("click", () => {
-  let counter = 0;
   for (let i = 0; i < circle.length; i++) {
     if (circle[i].classList.contains("active")) {
-      counter++;
+      select.textContent = circle[i].textContent;
     }
   }
-  select.textContent = counter;
   resultCard.style.display = "flex";
   mainCard.style.display = "none";
 });
