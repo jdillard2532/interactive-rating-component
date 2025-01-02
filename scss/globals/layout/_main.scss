@@ -1,0 +1,22 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 600px;
+}
+.slider-container {
+  .slider {
+    width: 100%;
+  }
+}
+
+//600px
+@media (max-width: 37.5rem) {
+  main {
+    align-items: normal;
+  }
+}
